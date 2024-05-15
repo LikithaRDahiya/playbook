@@ -7,5 +7,5 @@
   tasks:
     - name: play
       copy:
-        src: /var/lib/jenkins/workspace/
-        dest: /home/ansible
+        src: /home/ansible/project.war
+        dest: /root/apache-tomcat-9.0.89/webapps/pro.war
