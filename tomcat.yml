@@ -1,0 +1,14 @@
+---
+- name: playbook to pull docker image and run tomcat container to deploy war file
+  hosts: demo
+  become: yes
+  connection: ssh
+  tasks:
+    - name: docker login
+      command: docker login -u likithardahiya -p L1i2k3i4@6057
+    - name: remove docker images
+      command: docker rmi -f likithardahiya/project1:latest
+    - name: pull docker image
+      command: docker pull likithardahiya/project1
+    - name: run tomcat container
+      command: docker run -it -d -p 8000:8080 --name likitha likithardahiya/project1
